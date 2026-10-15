@@ -44,11 +44,21 @@ export default function SiteHeader({ search, onSearchChange, onOpenNav }) {
         <input
           type="search"
           id="search-input"
-          placeholder="Search product"
+          placeholder="Search products, packaging, clients…"
           autoComplete="off"
           value={search}
           onChange={(e) => onSearchChange?.(e.target.value)}
         />
+        {search && (
+          <button
+            type="button"
+            className="search-clear-btn"
+            onClick={() => onSearchChange?.('')}
+            aria-label="Clear search"
+          >
+            ✕
+          </button>
+        )}
       </div>
 
       <div className="header-actions">
@@ -58,10 +68,10 @@ export default function SiteHeader({ search, onSearchChange, onOpenNav }) {
           </svg>
         </Link>
         <Link className="btn-accent" to="/about">
-          Follow us
+          About
         </Link>
         <Link className="btn-accent btn-accent--solid" to="/contact">
-          Contact us
+          Contact
         </Link>
         <button
           className="nav-toggle"
@@ -72,7 +82,8 @@ export default function SiteHeader({ search, onSearchChange, onOpenNav }) {
           aria-controls="nav-overlay"
           onClick={onOpenNav}
         >
-          <span />
+          <span className="toggle-line" />
+          <span className="toggle-line" />
         </button>
       </div>
     </header>
