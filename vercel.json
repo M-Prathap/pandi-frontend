@@ -2,11 +2,11 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://pandi-portfolio.onrender.com/api/:path*"
+      "destination": "https://pandi-portfolio-backend.onrender.com/api/:path*"
     },
     {
       "source": "/uploads/:path*",
-      "destination": "https://pandi-portfolio.onrender.com/uploads/:path*"
+      "destination": "https://pandi-portfolio-backend.onrender.com/uploads/:path*"
     },
     {
       "source": "/(.*)",
